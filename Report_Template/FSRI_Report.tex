@@ -1,0 +1,180 @@
+\documentclass[12pt,oneside]{book}
+\input{commoncommands}
+
+%rename chapter headings
+\renewcommand{\chaptername}{}
+\renewcommand{\bibname}{References}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\rhead{}
+\chead{}
+\renewcommand{\headrulewidth}{0pt}
+
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{1}
+
+\begin{document}
+\pagenumbering{gobble}
+\bibliographystyle{unsrt}
+	
+\begin{minipage}[t][9in][s]{6.25in}
+
+\headerB{
+Cleverly Named Title \\
+To Describe Our Awesome \\ 
+Work\\
+}
+
+\normalsize
+
+\headerC{
+	{ \flushleft{
+	Author 1 \\
+	Author 2 \\
+	\vspace{0.2in}
+	UL Firefighter Safety Research Institute \\
+	Columbia, MD 20145 \\
+	\vspace*{2\baselineskip}
+	} 
+
+	\vfill
+
+	\flushright{
+
+	\includegraphics[width=2.0in]{FSRI_GraphicShield} \\ [.3in]
+
+	}
+	}
+	}
+
+\end{minipage}
+
+\newpage
+\hspace{5in}
+\newpage
+
+\frontmatter
+
+\begin{minipage}[t][9in][s]{6.25in}
+\pagenumbering{gobble}
+
+\headerB{
+Cleverly Named Title \\
+To Describe Our Awesome \\ 
+Work\\
+}
+
+\headerC{
+\flushleft{
+Author 1 \\
+Author 2 \\
+\vspace{0.2in}
+{UL Firefighter Safety Research Institute \\
+Columbia, MD \\}}
+
+\flushleft{\today \\}
+}
+
+
+\vfill
+
+\flushright{\includegraphics[width=2in]{FSRI_GraphicShield}}
+
+\titlesigs
+
+\end{minipage}
+
+\frontmatter
+
+\pagestyle{plain}
+\pagenumbering{roman}
+
+
+\begin{minipage}[t][9in][s]{6.25in}
+
+\flushleft{In no event shall UL be responsible to anyone for whatever use or non-use is made of the information contained in this Report and in no event shall UL, its employees, or its agents incur any obligation or liability for damages including, but not limited to, consequential damage arising out of or in connection  with the use or inability to use the information contained in this Report. Information conveyed by this Report applies only to the specimens actually involved in these tests. UL has not established a factory Follow-Up Service Program to determine the conformance of subsequently produced material, nor has any provision been made to apply any registered mark of UL to such material. The issuance of this Report in no way implies Listing, Classification or Recognition by UL and does not authorize the use of UL Listing, Classification or Recognition Marks or other reference to UL on or in connection with the product or system.
+}
+
+\vspace{3in}
+
+
+\vfill
+
+\hspace{1in}
+
+\end{minipage}
+
+\newpage
+
+\chapter*{\centering Acknowledgments}
+
+\begin{table}[!ht]
+	\centering
+	\caption*{Generic Table}
+	\begin{tabular}{ll}
+		\toprule[1.5pt]
+		Name & Awesomeness \\ 
+		\midrule
+		Neil Armstrong		 & First person to walk on the moon \\
+		Edith Clarke		 & First female ECE professor \\
+		John Goodenough		 & Rechargeable Lithium-Ion battery \\
+		Nikola Telsa		 & Modern alternating current \\  
+		\bottomrule[1.25pt]
+	\end{tabular}
+\end{table}
+
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+\chapter{List of Acronyms}
+
+\begin{tabbing}
+\hspace{1.5in} \= \\
+UL FSRI \> UL Firefighter Safety Research Institute \\
+\end{tabbing}
+
+\newpage
+
+\mainmatter
+
+\chapter*{\centering Abstract}
+
+\newpage
+
+\chapter{Background}
+
+\section{Previous Research}
+
+\chapter{Objectives}
+
+\chapter{Experimental Configuration}
+
+\chapter{Experiments Conducted}
+
+\chapter{Discussion}
+
+\chapter{Summary}
+
+\bibliography{UL_general}
+
+\clearpage
+
+\appendix
+
+\end{document}
