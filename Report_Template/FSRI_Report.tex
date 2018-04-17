@@ -11,6 +11,7 @@
 \chead{}
 \renewcommand{\headrulewidth}{0pt}
 
+% COMMENT TO REMOVE WATERMARK
 \usepackage{draftwatermark}
 \SetWatermarkText{DRAFT}
 \SetWatermarkScale{1}
@@ -28,9 +29,8 @@ Work\\
 }
 
 \normalsize
-
 \headerC{
-	{ \flushleft{
+	\flushleft{
 	Author 1 \\
 	Author 2 \\
 	\vspace{0.2in}
@@ -42,12 +42,10 @@ Work\\
 	\vfill
 
 	\flushright{
-
 	\includegraphics[width=2.0in]{FSRI_GraphicShield} \\ [.3in]
+	}
+}
 
-	}
-	}
-	}
 \footnotesize
 \flushright{\textcopyright Underwriters Laboratories Inc. All rights reserved. UL and the UL logo are trademarks of UL LLC}
 \end{minipage}
@@ -55,8 +53,6 @@ Work\\
 \newpage
 \hspace{5in}
 \newpage
-
-\frontmatter
 
 \begin{minipage}[t][9in][s]{6.25in}
 \pagenumbering{gobble}
@@ -68,16 +64,16 @@ Work\\
 }
 
 \headerC{
-\flushleft{
-Author 1 \\
-Author 2 \\
-\vspace{0.2in}
-{UL Firefighter Safety Research Institute \\
-Columbia, MD \\}}
+	\flushleft{
+	Author 1 \\
+	Author 2 \\
+	\vspace{0.2in}
+	{UL Firefighter Safety Research Institute \\
+	Columbia, MD 21045\\}
+	}
 
-\flushleft{\today \\}
+	\flushleft{\today \\}
 }
-
 
 \vfill
 
@@ -89,11 +85,7 @@ Columbia, MD \\}}
 \flushright{\textcopyright Underwriters Laboratories Inc. All rights reserved. UL and the UL logo are trademarks of UL LLC}
 \end{minipage}
 
-\frontmatter
-
-\pagestyle{plain}
-\pagenumbering{roman}
-
+\newpage
 
 \begin{minipage}[t][9in][s]{6.25in}
 
@@ -101,37 +93,20 @@ Columbia, MD \\}}
 }
 
 \vspace{3in}
-
-
 \vfill
-
 \hspace{1in}
 
 \end{minipage}
 
 \newpage
 
-\chapter*{\centering Acknowledgments}
+\frontmatter
 
-\begin{table}[!ht]
-	\centering
-	\caption*{Generic Table}
-	\begin{tabular}{ll}
-		\toprule[1.5pt]
-		Name & Awesomeness \\ 
-		\midrule
-		Neil Armstrong		 & First person to walk on the moon \\
-		Edith Clarke		 & First female ECE professor \\
-		John Goodenough		 & Rechargeable Lithium-Ion battery \\
-		Nikola Telsa		 & Modern alternating current \\  
-		\bottomrule[1.25pt]
-	\end{tabular}
-\end{table}
-
+\pagestyle{plain}
+\pagenumbering{roman}
 
 \cleardoublepage
 \phantomsection
-\addcontentsline{toc}{chapter}{Contents}
 \tableofcontents
 
 \cleardoublepage
@@ -152,15 +127,35 @@ UL 	    \> Underwriters Laboratories \\
 UL FSRI \> UL Firefighter Safety Research Institute \\
 \end{tabbing}
 
-\newpage
-
 \mainmatter
 
-\chapter*{\centering Abstract}
+\chapter*{Acknowledgments}
+\pagenumbering{gobble}
+
+\begin{table}[!ht]
+	\centering
+	\caption*{Generic Table}
+	\begin{tabular}{ll}
+		\toprule[1.5pt]
+		Name & Awesomeness \\ 
+		\midrule
+		Neil Armstrong		 & First person to walk on the moon \\
+		Edith Clarke		 & First female ECE professor \\
+		John Goodenough		 & Rechargeable Lithium-Ion battery \\
+		Nikola Telsa		 & Modern alternating current \\  
+		\bottomrule[1.25pt]
+	\end{tabular}
+\end{table}
 
 \newpage
 
-\chapter{Background}
+\chapter*{Abstract}
+
+\newpage
+\chapter{Introduction}
+\label{chap:intro}
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 \section{Motivation}
 
