@@ -50,5 +50,6 @@ Thumbs.db
 *.synctex.gz
 *.toc
 *.pdf
+*__latexindent_temp.tex
 
 !Report_Template/FSRI_GraphicShield.pdf

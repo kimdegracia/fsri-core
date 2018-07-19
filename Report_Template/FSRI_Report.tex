@@ -25,7 +25,7 @@
 \headerB{
 Cleverly Named Title \\
 To Describe Our Awesome \\ 
-Work\\
+Work \\
 }
 
 \normalsize
@@ -60,7 +60,7 @@ Work\\
 \headerB{
 Cleverly Named Title \\
 To Describe Our Awesome \\ 
-Work\\
+Work \\
 }
 
 \headerC{
@@ -174,42 +174,41 @@ UL FSRI \> UL Firefighter Safety Research Institute \\
 \subsection{Measurement Uncertainty}
 \label{subsec:uncertainty}
 
-*** THIS LAYOUT CONTAINS UNCERTAINTY INFORMATION FOR A VARIETY OF DIFFERENTLY MEASUREMENT TYPES, SO BE SURE TO REMOVE ANY MEASUREMENT TYPES THAT AREN'T MENTIONED IN REPORT. ***
+\textit{\hl{Note: this template contains uncertainty information for a variety of different measurement types. Be sure to remove any types that aren't mentioned.}} 
+
+\textit{\hl{Additionally, although this section provides information about measurement uncertainty in paragraphs that are sufficient for a technical report,}\textbf{\hl{ it's highly recommended that the content obtained from this section is still reviewed after being copied to a technical report to verify the accuracy and applicability of the information.}}\hl{ For example, it's good practice to verify that the instrumentation described in the paragraphs below resemble the same type used during the experiments described in the technical report.}}
 
 There are different components of uncertainty in the length, mass, temperature, heat flux, gas concentration, differential pressure, gas velocity, heat release rate, structure leakage, and water flow rate values reported throughout this document. Uncertainties are grouped into two categories according to the method used to estimate them. Type A uncertainties are those evaluated by statistical methods, and Type B are those evaluated by other means~\cite{Taylor&Kuyatt:1994}. Type B analysis of systematic uncertainties involves estimating the upper (+~a) and lower (-~a) limits for the quantity in question such that the probability that the value would be in the interval ($\pm$~a) is essentially 100~\%. After estimating uncertainties by either Type A or B analysis, the uncertainties are combined in quadrature to yield the combined standard uncertainty. Then, the combined standard uncertainty is multiplied by a coverage factor of two, which results in an expanded uncertainty with a 95~\% confidence interval (2$\sigma$). For some of these components, such as the zero and calibration elements, uncertainties are derived from referenced instrument specifications. For other components, referenced research results and past experience with the instruments provided input in the uncertainty determination.
 
-\subsubsection*{Length Dimensions}
-Length measurements, such as the room dimensions and instrumentation locations, were made with either a hand held laser measurement device having an accuracy of $\pm$~6.0~mm (0.25~in.) over a range of 0.61~m (2.0~ft) to 15.3~m (50.0~ft)~\cite{StanleyTools} or $\pm$~0.5~mm (0.02~in.) resolution steel measuring tapes manufactured in compliance with National Institute of Standards and Technology (NIST) Manual 44~\cite{Butcher:2012}, which specifies a tolerance of $\pm$~1.6~mm (0.06~in.) for 9.1~m (30~ft) tapes and $\pm$~6.4~mm (0.25~in.) for 30.5~m (100~ft) tapes. These uncertainties are all well within the precision of the reported dimensions, which are typically rounded to the nearest 0.1~m. Some issues, such as levelness of the device and ``soft'' edges on the upholstered furniture, result in an estimated expanded uncertainty of $\pm$~1.0~\% for reported length measurements.
+\subsubsection*{Length}
+Length measurements, such as the room dimensions and instrumentation locations, were made with either a hand held laser measurement device having an accuracy of 0.25~in. ($\pm$~6.0~mm) over a range of 2~ft (0.6~m) to 50~ft (15.2~m)~\cite{StanleyTools} or $\pm$~0.02~in. ($\pm$~0.51~mm) resolution steel measuring tapes manufactured in compliance with NIST Manual 44~\cite{Butcher:2012}, which specifies a tolerance of $\pm$~0.06~in. ($\pm$~1.5~mm) for 30~ft (9.1~m) tapes and $\pm$~0.25~in. ($\pm$~6.4~mm) for 100~ft (30.5~m) tapes. These uncertainties are all well within the precision of the reported dimensions, which are typically rounded to the nearest inch. Some issues, such as levelness of the device and ``soft'' edges on upholstered furniture, result in an estimated expanded uncertainty of $\pm$~1.0~\% for reported length measurements.
 
-\subsubsection*{Fuel Weights}
-The load cell used to weigh the fuels prior to the experiments had a range of 0~kg (0~lb) to 200~kg (440~lb) with a resolution of a 0.05~kg (0.11~lb) and a calibration uncertainty within 1~\%~\cite{Ohaus:2000}. The total expanded uncertainty for the fuel weights presented in this report that were measured by the load cell is estimated to be less than $\pm$~5~\%.
+\subsubsection*{Mass}
+The load cell used to weigh the fuels prior to the experiments had a range of 0~lb (0~kg) to 441~lb (200~kg) with a resolution of 0.11~lb (0.05~kg) and a calibration uncertainty within 1~\%~\cite{Ohaus:2000}. The total expanded uncertainty for the fuel weights measured by the load cell that are presented in this report is estimated to be less than $\pm$~5~\%.
 
-\subsubsection*{Thermocouples}
-For the bare-bead thermocouples used during the experiments, the standard uncertainty in the temperature of the thermocouple wire itself was reported by the manufacturer as being $\pm$~2.2~$^{\circ}$C at 277~$^{\circ}$C and increasing to $\pm$~9.5~$^{\circ}$C at 871~$^{\circ}$C~\cite{Omega:2004}. The variation of the temperature in the environment surrounding the thermocouple is known to be much greater than that resulting from the wire uncertainty. Expanded uncertainties as high as 20~\% for upper layer temperatures measured by a 1 mm bare-bead type K thermocouple have been reported by researchers at NIST~\cite{Blevins:1999,Pitts:2003}. Small diameter (approximately 0.25~mm?) thermocouples were used during these experiments to limit the impact of radiative heating and cooling. The total expanded uncertainty associated with the temperature measurements from these experiments is estimated to be $\pm$~15~\%.
+\subsubsection*{Gas Temperature}
+According to Omega Engineering, the manufacturer of the thermocouple wire utilized during the experiments, the standard uncertainty in the temperature of the thermocouple wire itself is $\pm$~2.2~$^\circ$C at 277~$^\circ$C and $\pm$~9.5~$^\circ$C at 871~$^\circ$C~\cite{Omega:2004}. In addition to the uncertainty of the sensor itself, radiative effects to the thermocouple should be considered. Several studies have attempted to quantify these effects on thermocouple measurement uncertainty in compartment fires~\cite{Blevins:1999,Pitts:2003}. These studies indicated that when the thermocouple is located in the upper gas layer, the actual temperature of the surrounding gas is typically higher than the measured temperature, although this difference is not as pronounced as when the thermocouple is in the lower layer. When the thermocouple is in the lower layer, particularly during a fully involved compartment fire, the percent error in measured temperature can be much larger. Because of these radiative contributions, the expanded total uncertainty is estimated as $\pm$~15~\%.
 
-\subsubsection*{Heat Flux Gauges}
-Total heat flux measurements were made using water-cooled Schmidt-Boelter heat flux gauges. The manufacturer reports a $\pm$~3~\% calibration expanded uncertainty for these devices~\cite{Medtherm:2003}. Results from an international study on total heat flux gauge calibration and response demonstrated that the total expanded uncertainty of a Schmidt-Boelter gauge is typically $\pm$8~\%~\cite{Pitts:2006}.
+\subsubsection*{Heat Flux}
+The manufacturer of the heat flux gauges, Medtherm Corporation, reports a $\pm$~3~\% calibration expanded uncertainty for the devices~\cite{Medtherm:2003}. Results from an international study on total heat flux gauge calibration and response demonstrated that the total expanded uncertainty of a Schmidt-Boelter gauge is typically $\pm$~8~\%~\cite{Pitts:2006}.
 
 \subsubsection*{Oxygen Concentration}
-The gas sampling instruments used throughout the series of tests discussed in this report have demonstrated a relative expanded uncertainty of $\pm$~1~\% when compared to span gas volume fractions~\cite{Bundy:2007}. According to a study by Lock~et~al.~\cite{Lock:1}, the non-uniformities and movement of exhaust gases in addition to the limited amount of sampling points considered in each experiment result in an estimated expanded uncertainty of $\pm$~12~\%.
+The oxygen concentration measurement range of the OxyMat6 was 0--25~\%. The gas sampling instruments used throughout the experiments described in this report have demonstrated a relative expanded uncertainty of $\pm$~1~\% when compared to span gas volume fractions~\cite{Bundy:2007}. According to a study by Lock~et~al.~\cite{Lock:1}, the non-uniformities and movement of exhaust gases in addition to the limited amount of sampling points considered in each experiment result in an estimated expanded uncertainty of $\pm$~12~\%.
 
-% The gas measurement instruments and sampling system used in this series of experiments have demonstrated an expanded (k~=~2) relative uncertainty of $\pm$~1~\% when compared with span gas volume fractions~\cite{Bundy:2007}. Given the non-uniformities and movement of the fire gas environment and the limited set of sampling points in these experiments, an estimated uncertainty of $\pm$~12~\% is applied to the results~\cite{Lock:1}.
+\subsubsection*{Pressure}
+Differential pressure reading uncertainty components were derived from pressure transducer instrument specifications and previous experience with pressure transducers. Each transducer was factory calibrated by the manufacturer to verify that the zero and span of the transducer resulted in an accuracy of $\pm$~1~\%~\cite{Setra:2002}. The total expanded uncertainty associated with the pressure data from these experiments is estimated to be $\pm$~10~\%.
 
-\subsubsection*{Pressure Transducers}
-The uncertainty components of differential pressure readings were derived from pressure transducer instrument specifications and previous experience with pressure transducers. The transducers were factory calibrated, and the zero and span of each were checked in the laboratory prior to the experiments, yielding an accuracy of $\pm$~1~\%~\cite{Setra:2002}. The total expanded uncertainty associated with pressure measurements obtained from the transducers is estimated as $\pm$~10~\%.
-
-% Differential pressure reading uncertainty components were derived from pressure transducer instrument specifications and previous experience with pressure transducers. Each transducer was factory calibrated by the manufacturer to verify that the zero and span of the transducer resulted in an accuracy of $\pm$~1~\%~\cite{Setra:2002}. The total expanded uncertainty associated with the pressure data from these experiments is estimated to be $\pm$~10~\%.
-
-\subsubsection*{Bi-Directional Probes}
-Bi-directional probes paired with single type K, inconel-sheathed thermocouples were used to measure gas velocity. The bi-directional probes used pressure transducers similar to those used to measure differential pressure as discussed in the previous subsection. A gas velocity measurement study that focused on flow through doorways during pre-flashover compartment fires yielded total expanded uncertainties ranging from $\pm$~14~\% to $\pm$~22~\% for measurements from BDPs similar to those used throughout the experiments described in this report~\cite{Bryant:FSJ2009}. The total expanded uncertainty for gas velocity measured during these experiments is estimated to be $\pm$~18~\%. 
+\subsubsection*{Gas Velocity}
+A gas velocity measurement study that focused on flow through doorways during pre-flashover compartment fires yielded total expanded uncertainties ranging from $\pm$~14~\% to $\pm$~22~\% for measurements from BDPs similar to those used throughout the experiments described in this report~\cite{Bryant:FSJ2009}. The total expanded uncertainty for gas velocity measured during these experiments is estimated to be $\pm$~18~\%.
 
 \subsubsection*{Heat Release Rate}
+\hl{Will depend upon technique used to measure HRR}
 
-\subsubsection*{Leakage} 
-To characterize ventilation within the structure, an air leakage measurement system was used to measure the amount of leakage associated with the training prop before each test~\cite{retrotec:leakage}. ASTM~E~779, `Standard Test Method for Determining Air Leakage Rate by Fan Pressurization', was followed to determine the air changes per area and the equivalent leakage area~\cite{astm_e779}. The leakage values were in units of air changes per hour at 50~Pa (ACPH50). 
+\subsubsection*{Structure Leakage} 
+To characterize ventilation within the structure, an air leakage measurement system (Model~5101) was used to measure the amount of leakage associated with the training prop before each test~\cite{retrotec:leakage}. \textit{ASTM~E779-10, Standard Test Method for Determining Air Leakage Rate by Fan Pressurization} was followed to determine the air leakage rate of the prop before each experiment~\cite{astm_e779}. The measured leakage rates were recorded in units of air changes per hour at 50~Pa (ACPH50). Retrotec, the manufacturer of the leakage measurement system, reports an accuracy of $\pm$~5~\% for the system.
 
 \subsubsection*{Water Flow Rate}
-Water flow rate was measured with a 3.81~cm (1.5~in.) diameter electromagnetic flow meter. The meter consisted of stainless steel pipe lined with a non-conductive material. Energized coils on the outside of the non-conductive material impose a magnetic field across the pipe. When the conductive fluid, water, flowed across the magnetic field a voltage, proportional to flow velocity, was created. The manufacturer reports a $\pm$~0.25~\% calibration uncertainty for the accuracy of the measurement~\cite{Badger:2015}. 
+Water flow rate was measured with a 1.5~in. (3.8~cm) diameter electromagnetic flow meter from Badger Meter, Inc. (Model~M2000). The meter consisted of stainless steel pipe lined with a non-conductive material. Energized coils on the outside of the non-conductive material imposed a magnetic field across the pipe, and when the conductive fluid (water) flowed across the magnetic field, a voltage proportional to flow velocity was produced. The manufacturer reports a $\pm$~0.25~\% calibration uncertainty for the accuracy of the measurement~\cite{Badger:2015}.
 
 \chapter{Experimental Procedure}
 \label{chap:exp_procedure}
