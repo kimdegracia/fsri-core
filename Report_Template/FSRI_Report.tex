@@ -161,9 +161,13 @@ UL FSRI \> UL Firefighter Safety Research Institute \\
 
 \section{Objectives}
 
+\chapter{Literature Review}
+\label{chap:lit_review}
 
 \chapter{Experimental Configuration}
 \label{chap:exp_config}
+
+\section{Experimental Structure}
 
 \section{Instrumentation}
 \label{sec:instrument}
@@ -176,7 +180,7 @@ UL FSRI \> UL Firefighter Safety Research Institute \\
 
 \textit{\hl{Note: this template contains uncertainty information for a variety of different measurement types. Be sure to remove any types that aren't mentioned.}} 
 
-\textit{\hl{Additionally, although this section provides information about measurement uncertainty in paragraphs that are sufficient for a technical report,}\textbf{\hl{ it's highly recommended that the content obtained from this section is still reviewed after being copied to a technical report to verify the accuracy and applicability of the information.}}\hl{ For example, it's good practice to verify that the instrumentation described in the paragraphs below resemble the same type used during the experiments described in the technical report.}}
+\textit{\hl{Additionally, although this section provides information about measurement uncertainty in paragraphs that are sufficient for a technical report,}\textbf{\hl{ it's highly recommended that the content obtained from this section is still reviewed after being copied to a technical report to verify the accuracy and applicability of the information.}}\hl{For example, it should be verified that the instrumentation described in the paragraphs below resemble the same type used during the experiments mentioned in the technical report.}}
 
 There are different components of uncertainty in the measured values reported in this document, specifically gas temperature, total heat flux, pressure, gas velocity, gas concentration, heat release rate, length, mass, structure leakage, and water flow rate. Uncertainties are grouped into two categories according to the method used to estimate them. Type A uncertainties are those evaluated by statistical methods, and Type B are those evaluated by other means~\cite{Taylor&Kuyatt:1994}. Type B analysis of systematic uncertainties involves estimating the upper ($+$~a) and lower ($-$~a) limits for the quantity in question such that the probability that the value would be in the interval ($\pm$~a) is essentially 100~\%. After estimating uncertainties by either Type A or B analysis, the uncertainties can be combined in quadrature to yield the combined standard uncertainty. Multiplying this combined standard uncertainty by a coverage factor of two results in an expanded uncertainty with a 95~\% confidence interval (2$\sigma$). For some components, such as the zero and calibration elements, uncertainties were derived from referenced instrument specifications. For other components, referenced research results and past experience with the instruments provided input for the uncertainty determination.
 
@@ -196,7 +200,9 @@ A gas velocity measurement study that focused on flow through doorways during pr
 The oxygen concentration measurement range of the OxyMat6 was 0--25~\%. The gas sampling instruments used throughout the experiments described in this report have demonstrated a relative expanded uncertainty of $\pm$~1~\% when compared to span gas volume fractions~\cite{Bundy:2007}. According to a study by Lock~et~al.~\cite{Lock:1}, the non-uniformities and movement of exhaust gases in addition to the limited amount of sampling points considered in each experiment result in an estimated expanded uncertainty of $\pm$~12~\%.
 
 \subsubsection*{Heat Release Rate}
-\hl{Will depend upon technique used to measure HRR}
+\hl{Will depend upon technique used to measure HRR. Need to specify fuels for which HRR was characterized.} 
+
+To understand the energy release of the fuel loads (i.e., the primary ignition source) used in these experiments, fuels were burned in Underwriters Laboratory's oxygen consumption calorimetry laboratory in Northbrook, Ill was The oxygen consumption calorimeter is sized to handle up to a 10~MW fire with a 31~ft (9.4~m) diameter conical hood. In a previous study, Bryant and Mullholland~\cite{Bryant:FM2008} estimated the uncertainty of oxygen consumption calorimeters measuring high heat release rate fires at $\pm$~11\%. They identified several sources of error within the calorimeter, with one of the primary sources being the uncertainty in the gas concentration measurements.
 
 \subsubsection*{Length}
 Length measurements, such as the room dimensions and instrumentation locations, were made with either a hand held laser measurement device having an accuracy of 0.25~in. ($\pm$~6.0~mm) over a range of 2~ft (0.6~m) to 50~ft (15.2~m)~\cite{StanleyTools} or $\pm$~0.02~in. ($\pm$~0.51~mm) resolution steel measuring tapes manufactured in compliance with NIST Manual 44~\cite{Butcher:2012}, which specifies a tolerance of $\pm$~0.06~in. ($\pm$~1.5~mm) for 30~ft (9.1~m) tapes and $\pm$~0.25~in. ($\pm$~6.4~mm) for 100~ft (30.5~m) tapes. These uncertainties are all well within the precision of the reported dimensions, which are typically rounded to the nearest inch. Some issues, such as levelness of the device and ``soft'' edges on upholstered furniture, result in an estimated expanded uncertainty of $\pm$~1.0~\% for reported length measurements.
@@ -210,24 +216,46 @@ To characterize ventilation within the structure, an air leakage measurement sys
 \subsubsection*{Water Flow Rate}
 Water flow rate was measured with a 1.5~in. (3.8~cm) diameter electromagnetic flow meter from Badger Meter, Inc. (Model~M2000). The meter consisted of stainless steel pipe lined with a non-conductive material. Energized coils on the outside of the non-conductive material imposed a magnetic field across the pipe, and when the conductive fluid (water) flowed across the magnetic field, a voltage proportional to flow velocity was produced. The manufacturer reports a $\pm$~0.25~\% calibration uncertainty for the accuracy of the measurement~\cite{Badger:2015}.
 
+\section{Fuel Load}
+
 \chapter{Experimental Procedure}
 \label{chap:exp_procedure}
-% Example of Table Definition
-% \begin{table}[!ht]
-% 	\centering
-% 	\caption{Example of Style in which Table Caption Should be Written}
-% 	\label{tab:<ref_name>}
-% 	\begin{tabular}{cl}
-% 		\toprule[1.5pt]
-% 		<header_1> & <header_2> \\
-% 		\midrule
-% 		<row_1_content>     & <row_1_content>     \\
-% 		<row_2_content>     & <row_2_content>     \\
-% 		\bottomrule[1.25pt]
-% 	\end{tabular}
-% \end{table}
 
-% Example of Figure Definition
+The following structure should be used to define tables:
+\begin{verbatim}
+	\begin{table}[!ht]
+	    \centering
+	    \caption{Example of Style in which Table Caption Should be 
+        Written}
+	    \label{tab:<ref_name>}
+	    \begin{tabular}{lc}
+	        \toprule[1.5pt]
+	        <header\_1> & <header\_2> \\
+	        \midrule
+	        <row\_1\_content>     & <row\_1\_content>     \\
+	        <row\_2\_content>     & <row\_2\_content>     \\
+	        \bottomrule[1.25pt]
+	    \end{tabular}
+	\end{table}
+\end{verbatim}
+
+This will produce a table like the one below
+\begin{table}[!ht]
+	\centering
+	\caption{Example of Style in which Table Caption Should be Written}
+	\label{tab:<ref_name>}
+	\begin{tabular}{lc}
+		\toprule[1.5pt]
+		<header\_1> & <header\_2> \\
+		\midrule
+		<row\_1\_content>     & <row\_1\_content>     \\
+		<row\_2\_content>     & <row\_2\_content>     \\
+		\bottomrule[1.25pt]
+	\end{tabular}
+\end{table}
+
+Example of Figure Definition
+
 % \begin{figure}[!ht]
 % 	\centering
 % 	\includegraphics[width=<set_width>]{<file_location>}
@@ -237,6 +265,12 @@ Water flow rate was measured with a 1.5~in. (3.8~cm) diameter electromagnetic fl
 
 
 \chapter{Results \& Discussion}
+
+
+\chapter{Tactical Considerations}
+
+
+\chapter{Research Needs}
 
 
 \chapter{Summary}
