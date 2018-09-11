@@ -10,25 +10,32 @@
 print('Python script compiled successfully.')
 print('Get stoked for the tutorial!!')
 
-# -------------- #
-# Import Modules #
-# -------------- #
+# -------------------------------- #
+# Import packages to use in script #
+# -------------------------------- #
 
 
-# ---------------------------------- #
-# Define Subdirectories & Info Files #
-# ---------------------------------- #
+# -------------------------- #
+# Define directory locations #
+# -------------------------- #
 
 
-# Create plot directory if necessary
+# -------------------------------------------- #
+# Read .csv files & store as pandas dataframes #
+# -------------------------------------------- #
+# Read in test description & channel list files
 
 
-# Read in channel list file & create list of sensor groups
+# Create list of sensor groups using the channel list 
 
 
 # ------------------- #
-# Set Plot Parameters #
+# Set plot parameters #
 # ------------------- #
+# Define 20 color pallet using RGB values
+
+
+# Define other general plot parameters
 
 
 # ----------------------- #
