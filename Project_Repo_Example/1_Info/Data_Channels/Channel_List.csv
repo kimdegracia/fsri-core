@@ -1,0 +1,60 @@
+Channel,Title,ScaleFactor,Offset,Primary_Chart,Type
+1TC8,Bedroom 8ft,1.8,32,Bedroom_TCs,Temperature
+1TC7,Bedroom 7ft,1.8,32,Bedroom_TCs,Temperature
+1TC6,Bedroom 6ft,1.8,32,Bedroom_TCs,Temperature
+1TC5,Bedroom 5ft,1.8,32,Bedroom_TCs,Temperature
+1TC4,Bedroom 4ft,1.8,32,Bedroom_TCs,Temperature
+1TC3,Bedroom 3ft,1.8,32,Bedroom_TCs,Temperature
+1TC2,Bedroom 2ft,1.8,32,Bedroom_TCs,Temperature
+1TC1,Bedroom 1ft,1.8,32,Bedroom_TCs,Temperature
+2TC7,End Hall 7ft,1.8,32,End_Hall_TCs,Temperature
+2TC6,End Hall 6ft,1.8,32,End_Hall_TCs,Temperature
+2TC5,End Hall 5ft,1.8,32,End_Hall_TCs,Temperature
+2TC4,End Hall 4ft,1.8,32,End_Hall_TCs,Temperature
+2TC3,End Hall 3ft,1.8,32,End_Hall_TCs,Temperature
+2TC2,End Hall 2ft,1.8,32,End_Hall_TCs,Temperature
+2TC1,End Hall 1ft,1.8,32,End_Hall_TCs,Temperature
+3TC7,Start Hall 7ft,1.8,32,Start_Hall_TCs,Temperature
+3TC6,Start Hall 6ft,1.8,32,Start_Hall_TCs,Temperature
+3TC5,Start Hall 5ft,1.8,32,Start_Hall_TCs,Temperature
+3TC4,Start Hall 4ft,1.8,32,Start_Hall_TCs,Temperature
+3TC3,Start Hall 3ft,1.8,32,Start_Hall_TCs,Temperature
+3TC2,Start Hall 2ft,1.8,32,Start_Hall_TCs,Temperature
+3TC1,Start Hall 1ft,1.8,32,Start_Hall_TCs,Temperature
+BDP15T,Bedroom Window Top,1.8,32,Bedroom_Window_TCs,Temperature
+BDP14T,Bedroom Window Top Middle,1.8,32,Bedroom_Window_TCs,Temperature
+BDP13T,Bedroom Window Middle,1.8,32,Bedroom_Window_TCs,Temperature
+BDP12T,Bedroom Window Bottom Middle,1.8,32,Bedroom_Window_TCs,Temperature
+BDP11T,Bedroom Window Bottom,1.8,32,Bedroom_Window_TCs,Temperature
+BDP25T,Start Hall Door Top,1.8,32,Start_Hall_Door_TCs,Temperature
+BDP24T,Start Hall Door Top Middle,1.8,32,Start_Hall_Door_TCs,Temperature
+BDP23T,Start Hall Door Middle,1.8,32,Start_Hall_Door_TCs,Temperature
+BDP22T,Start Hall Door Bottom Middle,1.8,32,Start_Hall_Door_TCs,Temperature
+BDP21T,Start Hall Door Bottom,1.8,32,Start_Hall_Door_TCs,Temperature
+BDP15V,Bedroom Window Top,9.964,24.91,Bedroom_Window_BDPs,Velocity
+BDP14V,Bedroom Window Top Middle,9.964,24.91,Bedroom_Window_BDPs,Velocity
+BDP13V,Bedroom Window Middle,9.964,24.91,Bedroom_Window_BDPs,Velocity
+BDP12V,Bedroom Window Bottom Middle,9.964,24.91,Bedroom_Window_BDPs,Velocity
+BDP11V,Bedroom Window Bottom,9.964,24.91,Bedroom_Window_BDPs,Velocity
+BDP25V,Start Hall Door Top,9.964,24.91,Start_Hall_Door_BDPs,Velocity
+BDP24V,Start Hall Door Top Middle,9.964,24.91,Start_Hall_Door_BDPs,Velocity
+BDP23V,Start Hall Door Middle,9.964,24.91,Start_Hall_Door_BDPs,Velocity
+BDP22V,Start Hall Door Bottom Middle,9.964,24.91,Start_Hall_Door_BDPs,Velocity
+BDP21V,Start Hall Door Bottom,9.964,24.91,Start_Hall_Door_BDPs,Velocity
+PT12,Bedroom 7ft,49.91,124.54,Bedroom_Pressure,Pressure
+PT11,Bedroom 1ft,49.91,124.54,Bedroom_Pressure,Pressure
+PT22,Start Hall 7ft,49.91,124.54,Start_Hall_Pressure,Pressure
+PT21,Start Hall 1ft,49.91,124.54,Start_Hall_Pressure,Pressure
+HF3,Start Hall 3ft (Horizontal),1965,0,Hall_Heat_Flux,Heat Flux
+HF2,End Hall 3ft (Horizontal),1848,0,Hall_Heat_Flux,Heat Flux
+HF1,Bedroom 6 in (Vertical),6305,0,Bedroom_Heat_Flux,Heat Flux
+GAS12,Bedroom O2 4ft Window,6.25,-6.25,Bedroom_O2,Oxygen
+GAS11,Bedroom O2 4in Window,6.25,-6.25,Bedroom_O2,Oxygen
+GAS22,Bedroom O2 4ft Doorway,6.25,-6.25,Bedroom_O2,Oxygen
+GAS21,Bedroom O2 4in Doorway,6.25,-6.25,Bedroom_O2,Oxygen
+H2O_FLOW,Flow Rate,60,0,Water_Flow,Water Flow
+WEA_VELO,Wind Velocity,12.5,-25,Weather_Velocity,Wind Velocity
+WEA_TEMP,,,,Weather_Temperature,Exterior Temperature
+WEA_DIR,,44.875,88.75,Weather_Direction,Wind Direction
+FireSideTC,Fire Side,1.8,32,Lining_Surface_TCs,Temperature
+WallSideTC,Back Side,1.8,32,Lining_Surface_TCs,Temperature
