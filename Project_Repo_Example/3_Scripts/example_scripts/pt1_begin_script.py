@@ -1,23 +1,22 @@
-# 1-begin_script.py
-#   by: Joe Willi
+# pt1_begin_script.py
+#   by: __________
 # ***************************** Run Notes ***************************** #
-# - This file should be used in conjunction with the instructions on    #
-#       the wiki page titled "Python: Python: Example Scripts" located  #
-#       in the fsri-core GitHub repo, which can be accessed via the     #
-#       following link:	                                                #
-#    https://github.com/ulfsri/fsri-core/wiki/Python:-Example-Scripts   #
+# - This file should be used in conjunction with the fsri-core wiki     #
+#       page titled "Python Examples: pt1_begin_script.py", which       #
+#       describes how to structure & things to include within the first #
+#       few portions of a Python script based on fsri guidelines        #
 #                                                                       #
-# - The intent of this script is to guide you through the process of    #
-#       initializing a Python script; that is, writing content that     #
-#       should almost, if not always, come before the main body of code #
-#       in a Python script                                              #
+# - It provides the reader of the wiki with a concrete examples of      #
+#       various topics that are discussed & should be used to follow    #
+#       along with the line numbers/content referenced in the wiki      #
 #                                                                       #
-# - After adding the necessary lines of code outlined in the section on #
-#       the wiki page about this file, executing the script will result #
-#       in the following:                                               #
-#           + specified packages being imported                         #
-#           + the definition of certain global variables                #
-#           + output of text via the print() function                   #
+# - After properly editing this script based on instructions outlined   #
+#       on the wiki page, execution of this script will:                #
+#           + import a number of specified modules/packages             #
+#           + set variables as desired directory locations              #
+#           + create directories that don't exist locally if necessary  #
+#           + output of numerous lines of text to check that variables  #
+#               have been defined properly                              #
 # ********************************************************************* #
 
 # --------------- #
