@@ -20,7 +20,7 @@
 # ********************************************************************* #
 
 # --------------- #
-# Import packages #
+# Import Packages #
 # --------------- #
 import os
 import _____ as __
@@ -44,7 +44,10 @@ plot_dir = _______________
 if ____ os._____(plot_dir): 
     os._____(_____)
     print(____ + '______________________')
-    
+
+# --------------- #
+# Check Your Work #
+# --------------- #
 # Print each directory that's been defined above
 print('Directory locations are defined as follows:')
 print('  Info   ---> ' + _______)
