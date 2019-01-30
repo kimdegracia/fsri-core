@@ -11,7 +11,7 @@
 #       along with the line numbers/content referenced in the wiki      #
 #                                                                       #
 # - After properly editing this script based on instructions outlined   #
-#       on the wiki page, execution of this script will:                #
+#       in the wiki, execution of this script will:                     #
 #           + import a number of specified modules/packages             #
 #           + set variables as desired directory locations              #
 #           + create directories that don't exist locally if necessary  #

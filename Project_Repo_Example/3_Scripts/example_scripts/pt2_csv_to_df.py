@@ -10,7 +10,7 @@
 #       along with the line numbers/content referenced in the wiki      #
 #                                                                       #
 # - After properly editing this script based on instructions outlined   #
-#       on the wiki page, execution of this script will:                #
+#       in the wiki, execution of this script will:                     #
 #           + Load .csv files to be used in the code                    #
 #           + Set the index of a DataFrame                              #
 #           + Load files from the data directory as DataFrames          #
