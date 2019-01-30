@@ -1,4 +1,4 @@
-Time,Event
-2017-07-14-12:04:55,Ignition
-2017-07-14-12:10:56,Hall door open
-2017-07-14-12:20:35,"Window open, suppression"
+Time,Timestamp,Event
+0,2017-07-14-12:04:55,Ignition
+361,2017-07-14-12:10:56,Hall door open
+940,2017-07-14-12:20:35,"Window open, suppression"

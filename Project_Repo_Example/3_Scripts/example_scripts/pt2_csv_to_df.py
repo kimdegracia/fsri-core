@@ -29,7 +29,7 @@ import matplotlib.pyplot as plt
 # -------------------- #
 # Define directory locations
 info_dir = '../../1_Info/'
-events_dir = info_dir + '/Events/'
+events_dir = info_dir + 'Events/'
 data_dir = '../../2_Data/'
 plot_dir = '../../4_Plots/Example_Script_Plots/'
 # Create plot directory if needed
