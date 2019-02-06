@@ -5,7 +5,7 @@
 #       page titled "Python Examples: pt2_csv_to_df.py", which          #
 #       introduces the use of the Pandas library                        #
 #                                                                       #
-# - It provides the reader of the wiki with a concrete examples of      #
+# - It provides the reader of the wiki with concrete examples of        #
 #       various topics that are discussed & should be used to follow    #
 #       along with the line numbers/content referenced in the wiki      #
 #                                                                       #

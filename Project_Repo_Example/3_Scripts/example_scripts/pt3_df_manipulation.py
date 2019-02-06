@@ -5,7 +5,7 @@
 #       page titled "Python Examples: pt3_df_manipulation.py", which    #
 #       describes how to manipulate, populate, & save DataFrames        #
 #                                                                       #
-# - It provides the reader of the wiki with a concrete examples of      #
+# - It provides the reader of the wiki with concrete examples of        #
 #       various topics that are discussed & should be used to follow    #
 #       along with the line numbers/content referenced in the wiki      #
 #                                                                       #

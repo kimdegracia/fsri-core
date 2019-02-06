@@ -6,7 +6,7 @@
 #       describes how to structure & things to include within the first #
 #       few portions of a Python script based on fsri guidelines        #
 #                                                                       #
-# - It provides the reader of the wiki with a concrete examples of      #
+# - It provides the reader of the wiki with concrete examples of        #
 #       various topics that are discussed & should be used to follow    #
 #       along with the line numbers/content referenced in the wiki      #
 #                                                                       #
