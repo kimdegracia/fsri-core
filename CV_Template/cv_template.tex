@@ -1,0 +1,134 @@
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[backend=biber,sorting=none]{biblatex}
+\addbibresource{template.bib}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+
+\usepackage[sc,osf]{mathpazo}
+
+% Set your name here
+\def\name{FirstName LastName}
+
+% Replace this with a link to your CV if you like, or set it empty
+% (as in \def\footerlink{}) to remove the link in the footer:
+\def\footerlink{}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.5in, 9in},
+  left=1.0in,
+  top=1.0in
+}
+
+% Customize page headers
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.5em}
+  }
+}{
+  \end{list}
+}
+
+\begin{document}
+
+% Place name at left
+{\huge \name} \\
+\noindent\rule{17cm}{0.4pt}
+
+% Alternatively, print name centered and bold:
+%\centerline{\huge \bf \name}
+
+\vspace{0.25in}
+
+\begin{minipage}[t]{0.5\textwidth}
+  123 Street Avenue \\
+  Columbia, MD  21045\\
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  Phone: (123) 456-7890 \\
+  Email: \href{mailto:firstname.lastname@ul.com} {\tt firstname.lastname@ul.com}\\
+
+\end{minipage}
+
+\section*{Education}
+
+\begin{itemize}
+  \item Degree, School, Year
+    \begin{itemize}
+      \item \textit{Thesis:} I wrote something.
+    \end{itemize}
+
+  \item Degree 2, School (2), Year
+
+\end{itemize}
+
+\section*{Professional Experience}
+Current Job \hfill Month Year - Present \\
+{\bf UL FSRI} \hfill Columbia, MD \vskip3pt
+About current work. \\
+
+Research Engineer \hfill Month Year - Month Year \\
+{\bf Previous Job} \hfill City, State \vskip3pt
+About prior work.\\
+
+\section*{Skills}
+\LaTeX \\
+Skill 1 \\
+Skill 2 \\
+Skill 3\\
+
+\section*{Honors, Awards, \& Fellowships}
+
+Award 1 \\
+Award 2 \\
+
+
+\section*{Research Interests}
+Firefighter hose stream and ventilation tactics \\
+
+
+\clearpage
+
+\section*{Publications}
+
+\nocite{*}
+\printbibliography[title=Journal Articles, type=article]
+\printbibliography[title=Peer Reviewed Technical Reports, type=report]
+\printbibliography[title=In Proceedings, type=inproceedings]
+
+
+\end{document}
