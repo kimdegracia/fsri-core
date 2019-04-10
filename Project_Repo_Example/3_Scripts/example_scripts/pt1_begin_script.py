@@ -3,8 +3,8 @@
 # ***************************** Run Notes ***************************** #
 # - This file should be used in conjunction with the fsri-core wiki     #
 #       page titled "Python Examples: pt1_begin_script.py", which       #
-#       describes how to structure & things to include within the first #
-#       few portions of a Python script based on fsri guidelines        #
+#       describes how to structure & what to include within the first   #
+#       few portions of a Python script based on fsri practices         #
 #                                                                       #
 # - It provides the reader of the wiki with concrete examples of        #
 #       various topics that are discussed & should be used to follow    #
@@ -15,7 +15,7 @@
 #           + import a number of specified modules/packages             #
 #           + set variables as desired directory locations              #
 #           + create directories that don't exist locally if necessary  #
-#           + output of numerous lines of text to check that variables  #
+#           + output numerous lines of text to verify that variables    #
 #               have been defined properly                              #
 # ********************************************************************* #
 
@@ -41,9 +41,9 @@ plot_dir = _______________
 #     print(file)
 
 # Resolve error by creating directory if needed
-if ____ os._____(plot_dir): 
-    os._____(_____)
-    print(____ + '______________________')
+if ___ os.___________(plot_dir): 
+    os.________(________)
+    print(________ + '______________________')
 
 # --------------- #
 # Check Your Work #

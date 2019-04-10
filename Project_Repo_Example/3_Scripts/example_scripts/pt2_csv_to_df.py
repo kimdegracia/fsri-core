@@ -11,7 +11,7 @@
 #                                                                       #
 # - After properly editing this script based on instructions outlined   #
 #       in the wiki, execution of this script will:                     #
-#           + Load .csv files to be used in the code                    #
+#           + Load .csv files as DataFrames to be used in the code      #
 #           + Set the index of a DataFrame                              #
 #           + Load files from the data directory as DataFrames          #
 # ********************************************************************* #
@@ -40,10 +40,10 @@ if not os.path.exists(plot_dir):
 # Load .csv File as Pandas DataFrame #
 # ---------------------------------- #
 # Read in channel list file as df with only argument being file's location
-df_no_spec_idx = pd.read_csv(____+'________________')
+df_no_spec_idx = pd.read_csv(________ + '______________________________')
 
 # Read in channel list file again, this adding argument to specify an index column
-df_idx_spec = pd.read_csv(____+'________________', index_col='_______')
+df_idx_spec = pd.read_csv(________ + '______________________________', index_col='_______')
 
 # print both dataframes to compare differences
 print(___________)
@@ -66,7 +66,7 @@ print(_________.loc[_____________, :])
 # ----------------------- #
 # Loop Through Data Files #
 # ----------------------- #
-for f in __.______(________):
+for f in __._______(________):
     # Print the file name
 
 
