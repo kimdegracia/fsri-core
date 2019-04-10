@@ -77,15 +77,15 @@ fig_height = 8 # height of figure saved as pdf
 # User-Defined Functions #
 # ---------------------- #
 def format_and_save_plot(y_lims, x_lims, secondary_axis_label, file_loc):
-	# Set tick parameters
+    # Format primary axes
+	# Set tick parameters, axes limits, & labels
 	ax1.tick_params(labelsize=tick_size, length=0, width=0)
 
-	# Scale axes limits & labels
 	ax1.________(bottom=y_lims[0], top=_________)
 	___.set_xlim(left=_________, right=x_lims[1])
 	___.__________('Time (s)', fontsize=__________)
 
-	# Secondary y-axis parameters
+	# Add secondary y-axis (if desired)
 	if secondary_axis_label != 'None':
 		ax2 = ax1.twinx()
 		___.___________(___________________, l_______, _______)
@@ -96,14 +96,15 @@ def format_and_save_plot(y_lims, x_lims, secondary_axis_label, file_loc):
 			ax2.set_ylim([secondary_axis_scale * y_lim for y_lim in y_lims])
 		ax2.yaxis.grid(b=None)
 
-	# Add vertical lines and labels for timing information (if available)
+	# Add event labels
 	ax3 = ax1.twiny()
 	___.set_xlim(left=_________, right=_________)
 	ax3.set_xticks(Events['Time'])
 	ax3.tick_params(axis='x', width=1, labelrotation=font_rotation, labelsize=event_font)
 	ax3.set_xticklabels(Events['Event'], ha='left')
-
-	# Add legend
+    ax3.xaxis.grid(b=None)
+    
+	# Add legend to the figure
 	________, _______ = ___._________________________()
 	ax1.legend(handles1, labels1, loc='best', fontsize=legend_font, 
             handlelength=3, frameon=True, framealpha=0.75)
@@ -187,7 +188,7 @@ for f in os.listdir(data_dir):
                 plot_data = plot_data.dropna()
 
                 # Set y-axis label
-                plt.ylabel('Pressure (Pa)', fontsize=label_size)
+                ax1.set_ylabel('Pressure (Pa)', fontsize=label_size)
 
                 if equal_scales:
                     y_min = -100
@@ -205,7 +206,7 @@ for f in os.listdir(data_dir):
                 plot_data = plot_data.dropna()
 
                 # Set y-axis label
-                plt.ylabel('Heat Flux (kW/m$^2$)', fontsize=label_size)
+                ax1.set_ylabel('Heat Flux (kW/m$^2$)', fontsize=label_size)
 
                 if equal_scales:
                     y_max = 50
@@ -222,7 +223,7 @@ for f in os.listdir(data_dir):
                 plot_data = plot_data.dropna()
 
                 # Set y-axis label
-                plt.ylabel('Gas Concentration (%)', fontsize=label_size)
+                ax1.set_ylabel('Gas Concentration (%)', fontsize=label_size)
 
                 if equal_scales:
                     y_max = 22
