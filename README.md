@@ -1,4 +1,4 @@
-Welcome to the fsri-core wiki!
+Welcome to the UL FSRI Core Repository!
 
 The UL FSRI stack utilizes a set of programs to process data, collaborate amongst the team, and create output. The following wikis will explain our team's workflow and outline guidelines to follow when working on FSRI projects.
 
