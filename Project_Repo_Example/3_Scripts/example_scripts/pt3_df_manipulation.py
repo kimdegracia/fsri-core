@@ -11,12 +11,12 @@
 #                                                                       #
 # - After properly editing this script based on instructions outlined   #
 #       on the wiki page, execution of this script will:                #
-#           + remove unnecessary columns & rows from channel_df_reduced #
-#               & exp_data                                              #
+#           + remove unnecessary columns & rows from the dataframes     #
+#               channel_list & exp_data                                 #
 #           + convert voltage data in exp_data to the appropriate data  #
 #               types                                                   #
 #           + create, populate, & save a .csv file containing the max,  #
-#               min, & mean values of channel data within exp_data      #
+#               min, & mean values of the data stored in exp_data       #
 # ********************************************************************* #
 
 # --------------- #
@@ -79,19 +79,19 @@ for f in os.listdir(data_dir):
     # Edit exp_data DataFrame #
     # ----------------------- #
     # Drop unnecessary time columns from exp_data
-    ________.drop(__________________, ____________)
+    ________.drop(_____________________________________, ____________)
 
     # Drop all rows after 400 s
-    exp_data._____(index=_____________, _____________)
+    exp_data.____(index=________________________, ____________)
 
 
 
     # -------------------- #
     # Convert Voltage Data #
     # -------------------- #
-    for ________ in _______________._____:
+    for _______ in __________________._____:
         # Define column as channel_data
-        channel_data = ________.___[_, ________]
+        channel_data = ________.___[_, _______]
 
         # Convert channel_data if necessary
         if channel_df_reduced.loc[channel, 'Type'] == 'Pressure':
@@ -103,18 +103,18 @@ for f in os.listdir(data_dir):
             converted_data = channel_data * scale_factor + offset
             converted_data = converted_data - converted_data.loc[:0].mean()
 
-        elif ____________________.___[________, _______] == __________:
+        elif __________________.___[_______, ______] == ___________:
             # Get scale factor for exp from info file
-            ____________ = _________.___[______, ________]
+            ____________ = _________.___[______, _______]
 
             # Zero voltages & convert to HF
-            zeroed_data = ______________ - _______________.__[__].____()
-            converted_data = ____________ * _____________
+            zeroed_data = ____________ - ____________.___[__].____()
+            converted_data = ___________ * ____________
 
-        elif ____________________.___[________, _______] == __________:
+        elif __________________.___[_______, ______] == ________:
             # Get scale factor & offset from channel list
-            ______________ = _________________.___[_________, ____________]
-            ______ = ___________________.___[_______, ________]
+            ____________ = __________________.___[_______, _____________]
+            ______ = __________________.___[_______, ________]
 
             # Convert voltage to oxygen
             ______________ = ____________ * ____________ + ______
@@ -123,13 +123,13 @@ for f in os.listdir(data_dir):
 
 
         # Replace voltages in exp_data with converted data
-        ________.___[_, ________] = converted_data
+        ________.___[_, _______] = converted_data
 
     # ------------------------------ #
     # Compute Max, Min, Mean of Data #
     # ------------------------------ #
     # Define DataFrame to populate with computed values
-    ________ = pd._________(columns=[___________________], index=________________________)
+    ________ = pd._________(columns=[____________________________], index=________________________)
 
 
 
@@ -141,9 +141,9 @@ for f in os.listdir(data_dir):
         channel_data = ________.___[__, ___]
 
         # Define the max, min, mean of the channel data
-        max_val = _____________.___()
-        min_val = _____________.___()
-        mean_val = _____________.___()
+        max_val = ____________.___()
+        min_val = ____________.___()
+        mean_val = ____________.____()
 
         # Add values to stats_df
         ________.___[___, _________] = np.round(max_val, 3)
@@ -151,5 +151,5 @@ for f in os.listdir(data_dir):
         ________.___[___, _________] = np.round(mean_val, 3)
 
     # Save stats_df as csv
-    stats_df.______(data_dir + _____ + _____________)
+    stats_df.______(data_dir + ______ + ____________)
 
