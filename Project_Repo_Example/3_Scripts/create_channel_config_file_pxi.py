@@ -12,8 +12,6 @@
 #           follow will produce .txt config file to import into NI Max to   #
 #           properly set up channels (instead of having to manually define  #
 #           them)                                                           #
-#           > NOTE: current defs were obtained from FSI DAQ hardware; NEED  #
-#               TO UPDATE FOR OURS                                          #
 #       + If you are unsure about certain variables required for NI Max     #
 #           config file, export a .txt config file from NI Max for DAQ      #
 #           being used                                                      #
@@ -30,11 +28,7 @@
 #       + All voltage channels...                                           #
 #           > are analog inputs                                             #
 #           > measure RSE voltage                                           #
-#           > are configured within NI Max to measure V within range of     #
-#               -10 to 10 V                                                 #
-#                                                                           #
-# - If we ever decide to incorporate a counting module, look to the version #
-#       of this script in the IFSI_PPE_Interface repo for guidance          #
+#           > are configured to measure V within range of -10 to 10 V       #
 # ************************************************************************* #
 
 # -------------- #
@@ -65,7 +59,7 @@ panel_defs = {1:[2,'Temperature'],
               9:[8,'Voltage'],
               10:[8,'Voltage']}
 
-# Dict to define channel numbers for panels in system
+# Dict with panel numbers as keys corresponding to array that defines channel inputs of attached module
 panel_chans =  {1:[0,32],
                 2:[0,32],
                 3:[0,32],
@@ -117,7 +111,14 @@ def get_DAQmxChannel_row(ch_label, phys_name, ch_type):
     elif ch_type == 'Voltage':
         return([ch_label, '10', ch_type, '-10', 'RSE', 'Volts', 'Analog Input', '', phys_name, ''])
 
-# function to get alarm ranges and units for different channel types.
+    elif ch_type == 'Counter Input':
+        ctr_num = int(int(phys_name.split('ai')[-1]) - 24)
+        PFI_value = counter_ch_num - ctr_num * 4
+        phys_name = f"{phys_name.split('ai')[0]}ctr{ctr_num}"
+        return([ch_label, ch_type, 'Rising', 'Count Up', '0', f"/{phys_name.split('/')[0]}/PFI{PFI_value}", 
+                'Count Edges', '', phys_name, ''])
+
+# Function to get alarm ranges and units for different channel types
 def get_channel_vars(ch_type):
     if ch_type == 'Temperature':
         function = '"Thermocouple (K)"'
@@ -159,9 +160,8 @@ def get_channel_vars(ch_type):
 
 def write_channel(array_num, bool_value, channel_type, pan_num, ch_num, name, phys_chan):
     # Define variables that will be used in lines of channel definition
-    function, units, low_alarm, high_alarm, min_value, max_value = get_channel_vars(
-        channel_type)
-    line_start = 'Valid Channel Arrray '+str(array_num)+'.'
+    function, units, low_alarm, high_alarm, min_value, max_value = get_channel_vars(channel_type)
+    line_start = f'Valid Channel Arrray {array_num}.'
 
     file.write(line_start+'Use? = "'+bool_value+'"'+'\n')
     file.write(line_start+'Channel Name = "'+name+'"'+'\n')
@@ -171,7 +171,7 @@ def write_channel(array_num, bool_value, channel_type, pan_num, ch_num, name, ph
     phys_channel_str = '"'+phys_chan+'"'
     file.write(line_start+'Physical Channel = '+phys_channel_str+'\n')
 
-    formatted_name = f'Pan{pan_num:02d}Ch{ch_num:02d}'
+    formatted_name = f'Pan{int(pan_num):02d}Ch{ch_num:02d}'
     global_ch_str = r'"\00\00\00	'+formatted_name+'"'
     file.write(line_start+'DAQmx Global Channel = '+global_ch_str+'\n')
 
@@ -238,17 +238,17 @@ for f in os.listdir(channel_list_dir):
         print(f'Creating config file from {f}...')
 
     # Read in channel list csv as df
-    channel_list = pd.read_csv(channel_list_dir+f, index_col='Channel_Name')
+    channel_list = pd.read_csv(channel_list_dir + f, index_col='Channel_Name')
 
     # Group list by mod IDs
     active_panels = channel_list.groupby('Panel')
 
-    # Create dict with Slot IDs as keys that ref list of tuples corresponding to active inputs for given module in the form (channel_input,channel_name)
+    # Create dict with slot IDs as keys that ref list of tuples corresponding to active inputs for given module in the form (channel_input, channel_name)
     active_inputs = {}
 
     for panID in active_panels.groups:
         # Create empty list to populate with active channel inputs for given panID
-        inputs = [channel_list.loc[idx,'Channel'] for idx in active_panels.groups[panID]]
+        inputs = [channel_list.loc[idx, 'Channel'] for idx in active_panels.groups[panID]]
 
         # Add series with index of input IDs referencing channel names to dict
         active_inputs[panID] = pd.Series(active_panels.groups[panID], index=inputs)
@@ -265,10 +265,11 @@ for f in os.listdir(channel_list_dir):
         end_range = panel_chans[pan_ID][1]
         if int(pan_ID) not in active_inputs.keys():
             # Write all inputs as false
-            for ch_ID in range(0, 32):
+            for ch_ID in range(0, end_range - start_range):
                 # Set channel label & physical name based on ch_ID & first num in panel_chans[pan_ID] array
                 ch_num = ch_ID
                 phys_chan_ID = f'{sys_ID}Slot{panel_defs[pan_ID][0]}/ai{ch_ID + start_range}'
+
                 ch_label = f'Pan{int(pan_ID):02d}Ch{ch_num:02d}'
 
                 write_channel(channel_array_ID, 'FALSE', default_input_type, pan_ID, ch_num, ch_label, phys_chan_ID)
@@ -280,10 +281,10 @@ for f in os.listdir(channel_list_dir):
                 # Set channel label & physical name based on ch_ID & first num in panel_chans[pan_ID] array
                 ch_num = ch_ID
                 phys_chan_ID = f'{sys_ID}Slot{panel_defs[pan_ID][0]}/ai{ch_ID + start_range}'
+
                 ch_label = f'Pan{int(pan_ID):02d}Ch{ch_num:02d}'
 
                 if ch_num in active_channels:
-                    bool_value = 'TRUE'
                     ch_label = active_channels[ch_num]
                     input_type = channel_list.loc[ch_label,'Type']
                     write_channel(channel_array_ID, 'TRUE', input_type, pan_ID, ch_num, ch_label, phys_chan_ID)
